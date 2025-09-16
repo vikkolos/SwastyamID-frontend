@@ -5,7 +5,10 @@ import DiagnosticDetail from './pages/DiagnosticDetail'
 function App() {
   return (
     <>
-      <DiagnosticDetail/>
+    <div className='flex justify-center'>
+
+    <DiagnosticDetail/>
+    </div>
     </>
   )
 }
