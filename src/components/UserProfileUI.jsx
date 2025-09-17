@@ -7,8 +7,9 @@ function UserProfileUI() {
     const {ProfileIsOn,setProfileIson} = useState(false)
 
   return (
-    <div className=' w-11 p-0.5  justify-center sm:w-19 h-11 bg-amber-50 rounded-4xl flex items-center sm:justify-around '>
-        <div className='hidden sm:block sm:translate-x-1 translate-y-0.5'>
+    <div className=' w-11 p-0.5  justify-center sm:w-19 h-11 bg-white rounded-4xl flex items-center sm:justify-around '>
+      
+        <div className='hidden sm:block sm:translate-x-0.25 '>
         <RiArrowDropDownLine color='black' size={27}/>
         </div>
         <div>
