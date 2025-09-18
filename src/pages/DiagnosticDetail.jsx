@@ -5,12 +5,13 @@ import DiagnosticPatientDetails from "../components/DiagnosticPatientDetails";
 import DiagnosticReDocCard from "../components/DiagnosticReDocCard";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
+import { IoIosArrowBack } from "react-icons/io";
 
  export function FullDetailsCard({isOpen,onClose,children}){
   if(!isOpen) return null;
   return(
     <div className="fixed z-40 w-full inset-0  rounded-2xl bg-white/30 backdrop-blur-sm border  h-full  flex justify-center items-center">
-       <div className="bg-white border-white/20 border rounded-lg shadow-[0px_0px_95px_10px_rgba(59,130,246,0.5)] left-1 max-h-2/3 top-1 w-full max-w-[900px]  p-6 relative h-2/3">
+       <div className="bg-white border-white/20 border rounded-lg shadow-[0px_0px_75px_20px_rgba(59,130,246,0.5)] left-1 max-h-2/3 top-1 w-full max-w-[900px]  p-6 relative h-2/3">
        <button
           onClick={onClose}
           className="absolute top-3 right-3 text-gray-500 hover:text-red-700"
@@ -84,7 +85,7 @@ function DiseaseDetail({
                 <div className="pl-6 justify-between flex flex-col">
                     <div>
                         <h6  className="font-semibold">Description</h6>
-                        <p className="h-18 line-clamp-4 overflow-hidden text-ellipsis mr-6">{diagnosisMain}</p>
+                        <p className="h-18 line-clamp-4 overflow-y-auto text-ellipsis mr-6">{diagnosisMain}</p>
                     </div>
                 </div>
 
@@ -115,6 +116,16 @@ function Medication(){
     )
 
 }
+function Backbutton(){
+  return(
+    <div className="mt-1">
+      <button  className="flex text-white bg-blue-400 p-2 px-3 rounded-3xl  w-auto h-11 hover:bg-blue-700 transiti-all duration-150 items-center">
+      <IoIosArrowBack className="text-white  " size={20}/>
+      {/* <span className="pl-1">Back</span> */}
+      </button>
+    </div>
+  )
+}
 function NavArea(){
     return(
      <div className="h-full w-full bg-amber-900">
@@ -126,12 +137,18 @@ function NavArea(){
 function DiagnosticDetail() {
   return (
    <>
-        <div className="bg-[#f1efec] p-4 h-screen w-full max-w-[1440px] rounded-2xl text-white grid grid-rows-16 gap-1">
+        <div className="bg-[#f1efec] px-4 py-2 h-screen w-full max-w-[1440px] rounded-2xl text-white grid grid-rows-16 gap-1">
   
                 <div className="row-span-1 grid grid-cols-18 gap-2">
-                    <div className="col-span-4">
+                    <div className="col-span-2">
+                    <div>
+                                  <Backbutton />
+                    </div>
+                    </div>
+                    <div className="col-span-2">
                     
                     </div>
+                  
                     <div className="col-span-10 flex justify-center items-center -translate-x-1.5 -translate-y-2.5">
                         <Tabs/>
                     </div>
@@ -151,7 +168,7 @@ function DiagnosticDetail() {
 
               
                 <div className="row-span-15 grid grid-cols-3 gap-2">
-                   <div className="col-span-1 ">
+                   <div className="col-span-1 h-full flex flex-col overflow-hidden">
                         <div className=" ">
                             <DiagnosticPatientDetails/>
                             <DiagnosticDoctorDetails/>
@@ -159,9 +176,18 @@ function DiagnosticDetail() {
                                  <h2 className='text-black font-bold text-lg pl-2 mt-3'>Related Documents</h2>
                                  
                              </div>
-                            <DiagnosticReDocCard/>
-                            <DiagnosticReDocCard/>
-                            <DiagnosticReDocCard/>
+                             <div className="overflow-y-auto scrollbar-none  rounded-2xl w-95 h-90 max-h-90 min-h-0 flex-1">
+
+                                <DiagnosticReDocCard/>
+                                <DiagnosticReDocCard/>
+                                <DiagnosticReDocCard/>
+                                <DiagnosticReDocCard/>
+                                <DiagnosticReDocCard/>
+                              
+                             </div>
+                             <div className="flex">
+                               
+                             </div>
                         </div>
                    </div>
                    <div className="col-span-1">
