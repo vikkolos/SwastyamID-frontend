@@ -4,6 +4,26 @@ import React, { useState } from 'react'
 import DiagnosticPatientDetails from "../components/DiagnosticPatientDetails";
 import DiagnosticReDocCard from "../components/DiagnosticReDocCard";
 import { IoIosNotificationsOutline } from "react-icons/io";
+import { IoCloseSharp } from "react-icons/io5";
+
+ export function FullDetailsCard({isOpen,onClose,children}){
+  if(!isOpen) return null;
+  return(
+    <div className="fixed z-40 w-full inset-0  rounded-2xl bg-white/30 backdrop-blur-sm border  h-full  flex justify-center items-center">
+       <div className="bg-white border-white/20 border rounded-lg shadow-[0px_0px_95px_10px_rgba(59,130,246,0.5)] left-1 max-h-2/3 top-1 w-full max-w-[900px]  p-6 relative h-2/3">
+       <button
+          onClick={onClose}
+          className="absolute top-3 right-3 text-gray-500 hover:text-red-700"
+        >
+          <IoCloseSharp size={30}/>
+        </button>
+        {children}
+       </div>
+    </div>
+  )
+}
+
+
 function NotificationIcon(){
     return(
         <div className="h-11 w-11 bg-white shadow rounded-4xl flex items-center justify-center">
@@ -54,7 +74,7 @@ function DiseaseDetail({
     return(
         <div>
             <h3 className='text-black font-bold text-lg pl-2 mt-3 pb-2'>Issue</h3>
-            <div className=" bg-white shadow w-90 h-52 rounded-2xl flex flex-col text-black justify-evenly pb-4 ">
+            <div className=" bg-white  w-90 h-52 rounded-2xl flex flex-col text-black justify-evenly pb-4 ">
            
                 <div className="pl-6">
                     <h4 className="text-black font-semibold text-2xl pt-3">{AffectedArea}</h4>

@@ -10,7 +10,7 @@ function DiagnosticReDocCard({
   const color = ["bg-red-500", "bg-green-500", "bg-blue-500", "bg-purple-500"];
 
   return (
-    <div className="relative flex w-90 h-28 bg-white shadow rounded-2xl items-center justify-between mt-2 pl-8 overflow-hidden">
+    <div className="relative flex w-90 h-28 bg-white  rounded-2xl items-center justify-between mt-2 pl-8 overflow-hidden">
       <div
         className={`absolute top-0 left-0 w-[4px] h-full ${
           color[Math.floor(Math.random() * color.length)]
